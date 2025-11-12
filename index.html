@@ -471,13 +471,10 @@
         .phone-screen {
             background: var(--beige);
             border-radius: 35px;
-            padding: 25px;
+            padding: 0;
             min-height: 650px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
             position: relative;
             overflow: hidden;
         }
@@ -489,9 +486,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                linear-gradient(135deg, rgba(245, 199, 199, 0.3) 0%, transparent 50%),
-                linear-gradient(225deg, rgba(154, 175, 170, 0.3) 0%, transparent 50%);
+            background: linear-gradient(to bottom, transparent, rgba(154, 175, 170, 0.1));
+            pointer-events: none;
         }
 
         .screen-content {
@@ -863,6 +859,192 @@
                 opacity: 1;
             }
         }
+
+        /* Home Screen Styles */
+        .home-header {
+            padding: 25px 20px 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .home-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .home-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 12px;
+            background: linear-gradient(to bottom right, #9AAFAA, #5A7B76);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(90, 123, 118, 0.3);
+            font-size: 16px;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: #9AAFAA;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .logo-text h1 {
+            font-size: 16px;
+            background: linear-gradient(to right, #5A7B76, #9AAFAA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: 0;
+            text-shadow: none;
+        }
+
+        .color-dots {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 6px 12px;
+            border-radius: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-content {
+            flex: 1;
+            padding: 10px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .home-card {
+            background: white;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .voice-btn {
+            background: linear-gradient(135deg, #F5C7C7, #E89999);
+            border: none;
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(232, 153, 153, 0.3);
+        }
+
+        .chat-text {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .stress-level {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stress-bars {
+            flex: 1;
+            height: 8px;
+            background: #E8DED0;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            gap: 2px;
+        }
+
+        .stress-bar {
+            flex: 1;
+            background: linear-gradient(to right, #9AAFAA, #5A7B76);
+            border-radius: 10px;
+        }
+
+        .stress-label {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .resource-btn {
+            background: linear-gradient(135deg, rgba(154, 175, 170, 0.15), rgba(90, 123, 118, 0.1));
+            border: 1px solid rgba(154, 175, 170, 0.3);
+            border-radius: 12px;
+            padding: 10px;
+            font-size: 11px;
+            color: var(--sage-dark);
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .bottom-nav {
+            background: white;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 10px 20px 15px;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 20px;
+        }
+
+        .nav-label {
+            font-size: 10px;
+            color: var(--text-light);
+        }
+
+        .nav-item.active .nav-label {
+            color: var(--rose);
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -1008,10 +1190,84 @@
                     <div class="phone-mockup">
                         <div class="phone-notch"></div>
                         <div class="phone-screen">
-                            <div class="screen-content">
-                                <div class="screen-icon">🌱</div>
-                                <div class="screen-text">Interactive Demo</div>
-                                <div class="screen-subtext">Available Soon</div>
+                            <!-- Home Screen Content -->
+                            <div class="home-header">
+                                <div class="home-header-row">
+                                    <div class="home-logo">
+                                        <div class="logo-icon">✨</div>
+                                        <div class="logo-text">
+                                            <p>Good morning</p>
+                                            <h1>MindPath</h1>
+                                        </div>
+                                    </div>
+                                    <div class="color-dots">
+                                        <div class="color-dot" style="background: #E5A082;"></div>
+                                        <div class="color-dot" style="background: #C9A876;"></div>
+                                        <div class="color-dot" style="background: #9AAFAA;"></div>
+                                        <div class="color-dot" style="background: #F5C7C7;"></div>
+                                        <div class="color-dot" style="background: #5A7B76;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="home-content">
+                                <div class="home-card">
+                                    <div class="card-title">🎤 Voice Recorder</div>
+                                    <button class="voice-btn">
+                                        <span>🎙️</span>
+                                        <span>Start Recording</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="home-card">
+                                    <div class="card-title">💬 Quick Chat</div>
+                                    <p class="chat-text">How are you feeling today? Start a conversation or take the GAD-7 assessment.</p>
+                                </div>
+                                
+                                <div class="home-card">
+                                    <div class="card-title">📊 Stress Level</div>
+                                    <div class="stress-level">
+                                        <div class="stress-bars">
+                                            <div class="stress-bar"></div>
+                                            <div class="stress-bar"></div>
+                                            <div class="stress-bar" style="opacity: 0.3;"></div>
+                                        </div>
+                                        <span class="stress-label">Moderate</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="home-card">
+                                    <div class="card-title">🌿 Resources</div>
+                                    <div class="resource-grid">
+                                        <button class="resource-btn">🧘 Meditation</button>
+                                        <button class="resource-btn">🌬️ Breathing</button>
+                                        <button class="resource-btn">☎️ Crisis</button>
+                                        <button class="resource-btn">🏛️ Campus</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bottom-nav">
+                                <div class="nav-item active">
+                                    <div>🏠</div>
+                                    <div class="nav-label">Home</div>
+                                </div>
+                                <div class="nav-item">
+                                    <div>🎤</div>
+                                    <div class="nav-label">Voice</div>
+                                </div>
+                                <div class="nav-item">
+                                    <div>💬</div>
+                                    <div class="nav-label">Chat</div>
+                                </div>
+                                <div class="nav-item">
+                                    <div>📊</div>
+                                    <div class="nav-label">Reports</div>
+                                </div>
+                                <div class="nav-item">
+                                    <div>🌿</div>
+                                    <div class="nav-label">Wellness</div>
+                                </div>
                             </div>
                         </div>
                     </div>
